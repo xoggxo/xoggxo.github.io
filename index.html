@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>紫微斗數命理 - Fortune Telling</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #6a1b9a;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #8e24aa;
+      overflow: hidden;
+    }
+    nav a {
+      float: left;
+      display: block;
+      color: white;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      background-color: #ab47bc;
+    }
+    .container {
+      padding: 20px;
+    }
+    .language-toggle {
+      margin: 10px;
+      text-align: right;
+    }
+    .testimonial {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    footer {
+      background-color: #6a1b9a;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 class="lang" data-lang-en="Zi Wei Dou Shu Fortune Telling" data-lang-zh="紫微斗數命理">紫微斗數命理</h1>
+    <div class="language-toggle">
+      <button onclick="setLanguage('zh')">中文</button>
+      <button onclick="setLanguage('en')">English</button>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#home" class="lang" data-lang-en="Home" data-lang-zh="首頁">首頁</a>
+    <a href="#about" class="lang" data-lang-en="About" data-lang-zh="關於我們">關於我們</a>
+    <a href="#services" class="lang" data-lang-en="Services" data-lang-zh="服務項目">服務項目</a>
+    <a href="#testimonials" class="lang" data-lang-en="Testimonials" data-lang-zh="客戶反饋">客戶反饋</a>
+    <a href="#contact" class="lang" data-lang-en="Contact" data-lang-zh="聯絡我們">聯絡我們</a>
+  </nav>
+
+  <div class="container">
+    <!-- 首頁 -->
+    <section id="home">
+      <h2 class="lang" data-lang-en="Welcome" data-lang-zh="歡迎">歡迎</h2>
+      <p class="lang" data-lang-en="Welcome to our fortune telling service. We provide personalized Zi Wei Dou Shu readings to help you find clarity in life." data-lang-zh="歡迎來到我們的紫微斗數命理服務，我們提供個人化的命盤分析，助您洞察人生。">
+        歡迎來到我們的紫微斗數命理服務，我們提供個人化的命盤分析，助您洞察人生。
+      </p>
+    </section>
+
+    <!-- 關於我們 -->
+    <section id="about">
+      <h2 class="lang" data-lang-en="About Us" data-lang-zh="關於我們">關於我們</h2>
+      <p class="lang" data-lang-en="My wife, a skilled Zi Wei Dou Shu practitioner, has years of experience helping clients from Singapore, Southeast Asia and beyond." data-lang-zh="我的太太是一位經驗豐富的紫微斗數算命師，曾為新加坡、東南亞等地的客戶提供服務。">
+        我的太太是一位經驗豐富的紫微斗數算命師，曾為新加坡、東南亞等地的客戶提供服務。
+      </p>
+    </section>
+
+    <!-- 服務項目 -->
+    <section id="services">
+      <h2 class="lang" data-lang-en="Our Services" data-lang-zh="服務項目">服務項目</h2>
+      <ul>
+        <li class="lang" data-lang-en="Personalized Fortune Telling" data-lang-zh="個人化命盤解析">個人化命盤解析</li>
+        <li class="lang" data-lang-en="Relationship & Career Guidance" data-lang-zh="感情與事業指導">感情與事業指導</li>
+        <li class="lang" data-lang-en="Monthly/Yearly Predictions" data-lang-zh="月度/年度運勢預測">月度/年度運勢預測</li>
+      </ul>
+    </section>
+
+    <!-- 客戶反饋 -->
+    <section id="testimonials">
+      <h2 class="lang" data-lang-en="Testimonials" data-lang-zh="客戶反饋">客戶反饋</h2>
+      <div class="testimonial">
+        <p class="lang" data-lang-en="I received an accurate reading that changed my perspective." data-lang-zh="她的解盤非常準確，讓我對未來充滿信心。">
+          她的解盤非常準確，讓我對未來充滿信心。
+        </p>
+        <p><strong class="lang" data-lang-en="Client from Singapore" data-lang-zh="來自新加坡的客戶">來自新加坡的客戶</strong></p>
+      </div>
+      <div class="testimonial">
+        <p class="lang" data-lang-en="Her insights into relationships are remarkable." data-lang-zh="她對感情的見解讓我受益匪淺。">
+          她對感情的見解讓我受益匪淺。
+        </p>
+        <p><strong class="lang" data-lang-en="Client from Malaysia" data-lang-zh="來自馬來西亞的客戶">來自馬來西亞的客戶</strong></p>
+      </div>
+    </section>
+
+    <!-- 聯絡我們 -->
+    <section id="contact">
+      <h2 class="lang" data-lang-en="Contact Us" data-lang-zh="聯絡我們">聯絡我們</h2>
+      <p class="lang" data-lang-en="Feel free to reach out for appointments or inquiries." data-lang-zh="如有任何疑問或預約，歡迎聯絡我們。">
+        如有任何疑問或預約，歡迎聯絡我們。
+      </p>
+      <p>Email: example@example.com</p>
+      <p>WhatsApp/Line: +65 1234 5678</p>
+    </section>
+  </div>
+
+  <footer>
+    <p class="lang" data-lang-en="© 2025 Zi Wei Dou Shu Fortune Telling" data-lang-zh="© 2025 紫微斗數命理">© 2025 紫微斗數命理</p>
+  </footer>
+
+  <script>
+    // 語言切換函數
+    function setLanguage(lang) {
+      var elements = document.getElementsByClassName('lang');
+      for (var i = 0; i < elements.length; i++) {
+        var text = elements[i].getAttribute('data-lang-' + lang);
+        if (text) {
+          elements[i].innerText = text;
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>
