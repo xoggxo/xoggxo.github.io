@@ -2,139 +2,271 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>紫微斗數命理 - Fortune Telling</title>
+  <title>Zi Wei Dou Shu - Destiny Unveiled</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- 引入 Bootstrap CSS -->
+  <!-- Google Fonts: Montserrat for a modern, professional look -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
+    /* Global styles */
     body {
-      padding-top: 70px;
+      font-family: 'Montserrat', sans-serif;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    /* Purple theme colors */
+    :root {
+      --primary-color: #5e2a7e; /* dark purple */
+      --secondary-color: #7b3fa3; /* medium purple */
+      --accent-color: #a678de; /* light purple accent */
+      --bg-light: #f8f9fa;
+    }
+    /* Navbar styles */
+    .navbar {
+      background-color: var(--primary-color);
+    }
+    .navbar-brand, .nav-link, .btn-outline-light {
+      color: #fff !important;
+    }
+    .btn-outline-light:hover {
+      background-color: var(--accent-color);
+      border-color: var(--accent-color);
+    }
+    /* Hero Section - Reduced height for better mobile visibility */
+    .hero {
+      background: linear-gradient(135deg, rgba(94,42,126,0.6), rgba(123,63,163,0.6)), url('https://via.placeholder.com/1920x800') no-repeat center center;
+      background-size: cover;
+      height: 70vh;
+      color: #fff;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 15px;
+    }
+    /* Scroll Down Indicator */
+    .scroll-down {
+      position: absolute;
+      bottom: 20px;
+      font-size: 2rem;
+      animation: bounce 2s infinite;
+      color: #fff;
+    }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(10px); }
+      60% { transform: translateY(5px); }
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 30px;
+    }
+    /* Section styles */
+    section {
+      padding: 80px 0;
+    }
+    /* About Section */
+    #about img {
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    /* Services cards */
+    .card {
+      border: none;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card h5 {
+      color: var(--primary-color);
+    }
+    /* Testimonials */
+    .testimonial-card {
+      border-left: 4px solid var(--primary-color);
+      background-color: var(--bg-light);
+      transition: transform 0.3s;
+    }
+    .testimonial-card:hover {
+      transform: scale(1.03);
+    }
+    /* Footer */
+    footer {
+      background-color: var(--primary-color);
+      color: #fff;
+      padding: 40px 0;
+    }
+    /* Language toggle buttons */
+    .language-toggle button {
+      margin-left: 10px;
+    }
+    /* Media queries for smaller devices */
+    @media (max-width: 768px) {
+      .hero {
+        height: 50vh;
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- 導覽列 -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
-      <a class="navbar-brand lang" data-lang-en="Zi Wei Dou Shu Fortune Telling" data-lang-zh="紫微斗數命理" href="#">紫微斗數命理</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <a class="navbar-brand lang" data-lang-en="Zi Wei Dou Shu" data-lang-zh="紫微斗數命理" href="#">Zi Wei Dou Shu</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item"><a class="nav-link lang" data-lang-en="Home" data-lang-zh="首頁" href="#home">首頁</a></li>
-          <li class="nav-item"><a class="nav-link lang" data-lang-en="About" data-lang-zh="關於我們" href="#about">關於我們</a></li>
-          <li class="nav-item"><a class="nav-link lang" data-lang-en="Services" data-lang-zh="服務項目" href="#services">服務項目</a></li>
-          <li class="nav-item"><a class="nav-link lang" data-lang-en="Testimonials" data-lang-zh="客戶反饋" href="#testimonials">客戶反饋</a></li>
-          <li class="nav-item"><a class="nav-link lang" data-lang-en="Contact" data-lang-zh="聯絡我們" href="#contact">聯絡我們</a></li>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link lang" data-lang-en="Home" data-lang-zh="Home" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link lang" data-lang-en="About" data-lang-zh="About" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link lang" data-lang-en="Services" data-lang-zh="Services" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link lang" data-lang-en="Testimonials" data-lang-zh="Testimonials" href="#testimonials">Testimonials</a></li>
+          <li class="nav-item"><a class="nav-link lang" data-lang-en="Contact" data-lang-zh="Contact" href="#contact">Contact</a></li>
         </ul>
-        <div class="d-flex">
-          <button class="btn btn-outline-light me-2" onclick="setLanguage('zh')">中文</button>
-          <button class="btn btn-outline-light" onclick="setLanguage('en')">English</button>
+        <div class="d-flex language-toggle">
+          <button class="btn btn-outline-light" onclick="setLanguage('en')">EN</button>
+          <button class="btn btn-outline-light" onclick="setLanguage('zh')">中文</button>
         </div>
       </div>
     </div>
   </nav>
-  
-  <!-- 主要內容 -->
-  <div class="container mt-5">
-    <!-- 首頁 -->
-    <section id="home" class="my-5 text-center">
-      <h2 class="lang" data-lang-en="Welcome" data-lang-zh="歡迎">歡迎</h2>
-      <p class="lang" data-lang-en="Welcome to our fortune telling service. We provide personalized Zi Wei Dou Shu readings to help you find clarity in life." data-lang-zh="歡迎來到我們的紫微斗數命理服務，我們提供個人化的命盤分析，助您洞察人生。">
-        歡迎來到我們的紫微斗數命理服務，我們提供個人化的命盤分析，助您洞察人生。
+
+  <!-- Hero Section -->
+  <header class="hero" id="home">
+    <div class="container">
+      <h1 class="lang" data-lang-en="Unveil Your Destiny" data-lang-zh="揭開你的命運">Unveil Your Destiny</h1>
+      <p class="lang" data-lang-en="Personalized Zi Wei Dou Shu readings to guide you through life's mysteries." data-lang-zh="專屬的紫微斗數解析，指引您探索生命奧秘。">
+        Personalized Zi Wei Dou Shu readings to guide you through life's mysteries.
       </p>
-    </section>
-    
-    <!-- 關於我們 -->
-    <section id="about" class="my-5">
+      <a href="#contact" class="btn btn-lg btn-outline-light lang" data-lang-en="Schedule a Reading" data-lang-zh="預約諮詢">Schedule a Reading</a>
+    </div>
+    <div class="scroll-down">&#8595;</div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
       <div class="row align-items-center">
         <div class="col-md-6">
-          <h2 class="lang" data-lang-en="About Us" data-lang-zh="關於我們">關於我們</h2>
-          <p class="lang" data-lang-en="My wife, a skilled Zi Wei Dou Shu practitioner, has years of experience helping clients from Singapore, Southeast Asia and beyond." data-lang-zh="我的太太是一位經驗豐富的紫微斗數算命師，曾為新加坡、東南亞等地的客戶提供服務。">
-            我的太太是一位經驗豐富的紫微斗數算命師，曾為新加坡、東南亞等地的客戶提供服務。
+          <h2 class="lang" data-lang-en="About Us" data-lang-zh="About Us">About Us</h2>
+          <p class="lang" data-lang-en="With years of expertise in Zi Wei Dou Shu, our readings combine tradition and modern insights, offering you a path to self-discovery and empowerment." data-lang-zh="憑藉多年紫微斗數專業，我們的解盤結合傳統智慧與現代見解，助您找到自我探索與成長之路。">
+            With years of expertise in Zi Wei Dou Shu, our readings combine tradition and modern insights, offering you a path to self-discovery and empowerment.
           </p>
         </div>
         <div class="col-md-6">
-          <img src="https://via.placeholder.com/500x300" alt="About us image" class="img-fluid rounded">
+          <img src="https://via.placeholder.com/500x350" alt="About Us" class="img-fluid">
         </div>
       </div>
-    </section>
-    
-    <!-- 服務項目 -->
-    <section id="services" class="my-5">
-      <h2 class="lang" data-lang-en="Our Services" data-lang-zh="服務項目">服務項目</h2>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5 lang" data-lang-en="Our Services" data-lang-zh="Our Services">Our Services</h2>
       <div class="row">
-        <div class="col-md-4">
-          <div class="card mb-3">
-            <div class="card-body">
-              <h5 class="card-title lang" data-lang-en="Personalized Fortune Telling" data-lang-zh="個人化命盤解析">個人化命盤解析</h5>
-              <p class="card-text lang" data-lang-en="Detailed readings to unveil your destiny." data-lang-zh="深入解盤，揭示您的命運。">深入解盤，揭示您的命運。</p>
-            </div>
+        <div class="col-md-4 mb-4">
+          <div class="card p-3 h-100">
+            <h5 class="card-title lang" data-lang-en="Personalized Readings" data-lang-zh="Personalized Readings">Personalized Readings</h5>
+            <p class="card-text lang" data-lang-en="Detailed analysis tailored to your unique destiny." data-lang-zh="針對您獨特命運的深入解析。">
+              Detailed analysis tailored to your unique destiny.
+            </p>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card mb-3">
-            <div class="card-body">
-              <h5 class="card-title lang" data-lang-en="Relationship & Career Guidance" data-lang-zh="感情與事業指導">感情與事業指導</h5>
-              <p class="card-text lang" data-lang-en="Advice on relationships and career for a better future." data-lang-zh="提供感情與事業建議，助您邁向更好的未來。">提供感情與事業建議，助您邁向更好的未來。</p>
-            </div>
+        <div class="col-md-4 mb-4">
+          <div class="card p-3 h-100">
+            <h5 class="card-title lang" data-lang-en="Relationship & Career Guidance" data-lang-zh="Relationship & Career Guidance">Relationship & Career Guidance</h5>
+            <p class="card-text lang" data-lang-en="Expert advice to balance your personal and professional life." data-lang-zh="提供專業建議，平衡您的人生各面向。">
+              Expert advice to balance your personal and professional life.
+            </p>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card mb-3">
-            <div class="card-body">
-              <h5 class="card-title lang" data-lang-en="Monthly/Yearly Predictions" data-lang-zh="月度/年度運勢預測">月度/年度運勢預測</h5>
-              <p class="card-text lang" data-lang-en="Keep track of your fortune month by month." data-lang-zh="每月/每年運勢預測，助您提前佈局。">每月/每年運勢預測，助您提前佈局。</p>
-            </div>
+        <div class="col-md-4 mb-4">
+          <div class="card p-3 h-100">
+            <h5 class="card-title lang" data-lang-en="Monthly/Yearly Predictions" data-lang-zh="Monthly/Yearly Predictions">Monthly/Yearly Predictions</h5>
+            <p class="card-text lang" data-lang-en="Stay ahead with regular forecasts of your upcoming trends." data-lang-zh="每月、每年運勢預測，讓您未雨綢繆。">
+              Stay ahead with regular forecasts of your upcoming trends.
+            </p>
           </div>
         </div>
       </div>
-    </section>
-    
-    <!-- 客戶反饋 -->
-    <section id="testimonials" class="my-5">
-      <h2 class="lang" data-lang-en="Testimonials" data-lang-zh="客戶反饋">客戶反饋</h2>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials">
+    <div class="container">
+      <h2 class="text-center mb-5 lang" data-lang-en="Testimonials" data-lang-zh="Testimonials">Testimonials</h2>
       <div class="row">
-        <div class="col-md-6">
-          <div class="card mb-3">
+        <div class="col-md-6 mb-4">
+          <div class="card testimonial-card p-3">
             <div class="card-body">
-              <p class="card-text lang" data-lang-en="I received an accurate reading that changed my perspective." data-lang-zh="她的解盤非常準確，讓我對未來充滿信心。">她的解盤非常準確，讓我對未來充滿信心。</p>
-              <p class="mb-0"><strong class="lang" data-lang-en="Client from Singapore" data-lang-zh="來自新加坡的客戶">來自新加坡的客戶</strong></p>
+              <p class="card-text lang" data-lang-en="The reading was incredibly accurate and opened my eyes to new possibilities." data-lang-zh="這次解盤準確無比，讓我看到了全新的可能。">
+                The reading was incredibly accurate and opened my eyes to new possibilities.
+              </p>
+              <p class="mb-0"><strong class="lang" data-lang-en="Client from Singapore" data-lang-zh="Client from Singapore">Client from Singapore</strong></p>
             </div>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="card mb-3">
+        <div class="col-md-6 mb-4">
+          <div class="card testimonial-card p-3">
             <div class="card-body">
-              <p class="card-text lang" data-lang-en="Her insights into relationships are remarkable." data-lang-zh="她對感情的見解讓我受益匪淺。">她對感情的見解讓我受益匪淺。</p>
-              <p class="mb-0"><strong class="lang" data-lang-en="Client from Malaysia" data-lang-zh="來自馬來西亞的客戶">來自馬來西亞的客戶</strong></p>
+              <p class="card-text lang" data-lang-en="Her insights into my career path were both profound and enlightening." data-lang-zh="她對我職涯方向的洞見非常深刻，讓我受益匪淺。">
+                Her insights into my career path were both profound and enlightening.
+              </p>
+              <p class="mb-0"><strong class="lang" data-lang-en="Client from Malaysia" data-lang-zh="Client from Malaysia">Client from Malaysia</strong></p>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    
-    <!-- 聯絡我們 -->
-    <section id="contact" class="my-5">
-      <h2 class="lang" data-lang-en="Contact Us" data-lang-zh="聯絡我們">聯絡我們</h2>
-      <p class="lang" data-lang-en="Feel free to reach out for appointments or inquiries." data-lang-zh="如有任何疑問或預約，歡迎聯絡我們。">
-        如有任何疑問或預約，歡迎聯絡我們。
-      </p>
-      <p>Email: example@example.com</p>
-      <p>WhatsApp/Line: +65 1234 5678</p>
-    </section>
-  </div>
-  
-  <!-- 頁尾 -->
-  <footer class="bg-primary text-white text-center py-3">
-    <p class="lang" data-lang-en="© 2025 Zi Wei Dou Shu Fortune Telling" data-lang-zh="© 2025 紫微斗數命理">© 2025 紫微斗數命理</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5 lang" data-lang-en="Contact Us" data-lang-zh="Contact Us">Contact Us</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <p class="text-center lang" data-lang-en="For appointments and inquiries, please reach out via email or WhatsApp/Line." data-lang-zh="For appointments and inquiries, please reach out via email or WhatsApp/Line.">
+            For appointments and inquiries, please reach out via email or WhatsApp/Line.
+          </p>
+          <div class="text-center">
+            <p>Email: <a href="mailto:example@example.com">example@example.com</a></p>
+            <p>WhatsApp/Line: +65 1234 5678</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container text-center">
+      <p class="lang" data-lang-en="© 2025 Zi Wei Dou Shu - Destiny Unveiled" data-lang-zh="© 2025 Zi Wei Dou Shu - Destiny Unveiled">© 2025 Zi Wei Dou Shu - Destiny Unveiled</p>
+    </div>
   </footer>
-  
-  <!-- 引入 Bootstrap JS Bundle -->
+
+  <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    // 語言切換函數
+    // Language switching function
     function setLanguage(lang) {
       var elements = document.getElementsByClassName('lang');
       for (var i = 0; i < elements.length; i++) {
@@ -144,6 +276,10 @@
         }
       }
     }
+    // Default language is English on page load
+    document.addEventListener("DOMContentLoaded", function() {
+      setLanguage('en');
+    });
   </script>
 </body>
 </html>
